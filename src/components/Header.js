@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
+import Constant from 'expo-constants'
 
 export default function Header() {
     const myColor = "#212121"
