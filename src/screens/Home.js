@@ -1,10 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import Header  from '../components/Header'
+import Card  from '../components/Card'
+
 
 export default function HomeScreen() {
   return (
     <View>
-      <Text>Open up App.js to start working on your app!</Text>
+    <Header />
+
+    <ScrollView>
+    <Card  />
+    <Card  />
+    <Card  />
+    <Card  />
+    <Card  />
+    <Card  />
+    </ScrollView>
     </View>
+
   );
 }
