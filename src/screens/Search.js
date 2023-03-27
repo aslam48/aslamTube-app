@@ -4,7 +4,7 @@ import {Ionicons} from '@expo/vector-icons';
 import { useState } from 'react';
 import MiniCart from '../components/MiniCard'
 import Constant from 'expo-constants'
-
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -16,6 +16,7 @@ const SearchScreen = () => {
     const [miniCarData, setminiCard] = useState([])
     const [loading, setLoading] = useState(false)
 
+    const navigation = useNavigation()
 // const fetchData = () => {
 //     setLoading(true)
 //     fetch(`
@@ -57,7 +58,7 @@ return  (
       marginTop:Constant.statusBarHeight 
         ,flex: 1}}>
         <View style={{ padding:5, flexDirection: "row", justifyContent:"space-around",elevation: 4, shadowOffset: {width: 10, height: 10,}, shadowColor: "black", shadowOpacity: 1.0, backgroundColor:  "white"}}>
-            <Ionicons name ="md-arrow-back" size={32} /> 
+            <Ionicons name ="md-arrow-back" size={32} onPress = {() => navigation.goBack()} /> 
             <TextInput style={{width: "70%", backgroundColor: "#e6e6e6"}} value={value} onChangeText ={(text)=> setValue(text)} 
             />
             <Ionicons onPress={() => fetchData()} name ="md-send" size={32} /> 
