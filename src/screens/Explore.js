@@ -6,6 +6,14 @@ import Header  from '../components/Header'
 
 
 
+const LittlCard = () => {
+    return (
+        <View style={{backgroundColor: "red", width:120, borderRadius:4}}>
+            <Text  style={{textAlign: "center", color: "white", fontSize: 22}}>Explore Screen</Text>
+        </View>
+    )
+}
+
 
 
 const Explore = () => {
@@ -13,6 +21,7 @@ const Explore = () => {
     <View style={{flex: 1}}>
         <Header/>
         <Text>Explore</Text>
+        <LittlCard />
     </View>
   )
 }

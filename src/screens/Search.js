@@ -6,7 +6,8 @@ import MiniCart from '../components/MiniCard'
 import Constant from 'expo-constants'
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
-import youTube_API_KEY from '../apikey';
+import N from '../../config'
+
 
 
 
@@ -41,7 +42,7 @@ const SearchScreen = () => {
 const fetchData = () => {
     setLoading(true)
     fetch
-    (`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=${process.env.REACT_APP_youTube_API_KEY}`)
+    (`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=${N}`)
     .then(res=>res.json())
     .then(data=>{
         // console.log(data)
