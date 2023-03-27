@@ -6,7 +6,9 @@ import Constant from 'expo-constants'
 export default function Header() {
     const myColor = "#212121"
   return (
-    <View style={{height: 45, backgroundColor: "gray", flexDirection: "row", justifyContent: "space-between", elevation: 4, shadowOffset: {width: 10, height: 10,}, shadowColor: "black", shadowOpacity: 1.0 }}>
+    <View style={{ 
+      marginTop:Constant.statusBarHeight 
+      ,height: 45, backgroundColor: "gray", flexDirection: "row", justifyContent: "space-between", elevation: 4, shadowOffset: {width: 10, height: 10,}, shadowColor: "black", shadowOpacity: 1.0 }}>
 
     <View style={{flexDirection: "row", margin: 5}}>
         <MaterialIcons style={{marginLeft:20}} name="live-tv" size={24} color="black" />
