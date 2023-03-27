@@ -47,7 +47,8 @@ const  RootHome = () => {
 })}
  >
   <Tab.Screen name="home" component={RootHome} />
-  <Tab.Screen name="explore" component={Explore} />
+  {/* <Tab.Screen name="explore" component={Explore} /> */}
+  <Tab.Screen name="search" component={SearchScreen} />
   <Tab.Screen name="subscriptions" component={Subscribe} />
  </Tab.Navigator>
 }
@@ -61,6 +62,7 @@ export default function App() {
   }}
 >
         <Tab.Screen name="rootHome" component={Home} />
+       {/* <Tab.Screen name="explore" component={Explore} /> */}
         <Tab.Screen name="search" component={SearchScreen} />
         <Tab.Screen name="videoplayer" component={VideoPlayer} />
       </Tab.Navigator>
