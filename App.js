@@ -12,6 +12,14 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
 
 
+
+import {reducer} from './src/reducers/reducers'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+
+const store = createStore(reducer)
+
+
 const Tab = createBottomTabNavigator()
 
 
@@ -46,6 +54,7 @@ const  RootHome = () => {
 
 export default function App() {
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Tab.Navigator screenOptions={{
     headerShown: false
@@ -56,5 +65,6 @@ export default function App() {
         <Tab.Screen name="videoplayer" component={VideoPlayer} />
       </Tab.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }

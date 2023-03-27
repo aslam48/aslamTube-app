@@ -5,15 +5,19 @@ import { useState } from 'react';
 import MiniCart from '../components/MiniCard'
 import Constant from 'expo-constants'
 import { useNavigation } from '@react-navigation/native';
-
-
+import { useSelector, useDispatch } from 'react-redux';
+import youTube_API_KEY from '../apikey';
 
 
 
 
 const SearchScreen = () => {
+    const dispatch = useDispatch()
     const [value, setValue] = useState(" ")
-    const [miniCarData, setminiCard] = useState([])
+    // const [miniCarData, setminiCard] = useState([])
+   const miniCarData =  useSelector(state => {
+        return state
+    })
     const [loading, setLoading] = useState(false)
 
     const navigation = useNavigation()
@@ -37,13 +41,14 @@ const SearchScreen = () => {
 const fetchData = () => {
     setLoading(true)
     fetch
-    (`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=AIzaSyDU23SmcW7o08ywSlprsPZ61FgZcjjRO54`)
+    (`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${value}&type=video&key=${process.env.REACT_APP_youTube_API_KEY}`)
     .then(res=>res.json())
     .then(data=>{
         // console.log(data)
                 setLoading(false)
                  setLoading(false)
-                setminiCard(data.items)
+                 dispatch({type: "add", payload:data.items})
+                // setminiCard(data.items)
     
 
     })
